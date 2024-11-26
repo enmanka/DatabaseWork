@@ -48,14 +48,14 @@
                 </el-form-item>
               </el-form>
             </el-tab-pane>
-            <el-tab-pane label="手机号" name="fourth">
+             <el-tab-pane label="密码" name="fourth">
               <el-form ref="dynamicValidateForm" :model="user" label-width="100px" class="demo-dynamic">
                 <el-form-item>
-                  <el-input v-model="user.mobile" />
+                  <el-input v-model="user.password" />
                 </el-form-item>
 
                 <el-form-item>
-                  <el-button type="primary" @click="submitForm('dynamicValidateForm')">提交</el-button>
+                  <el-button type="primary" @click="submitForm('dynamicValidateForm')">修改</el-button>
                   <el-button @click="resetForm('dynamicValidateForm')">重置</el-button>
                 </el-form-item>
               </el-form>
