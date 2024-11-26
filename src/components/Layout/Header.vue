@@ -6,7 +6,7 @@
     >
       <template slot="brand">
         <b-navbar-item tag="div">
-          <img :src="doubaoImg" alt="logo">
+          <img :src="Img" alt="logo" style="width: 120px;">
         </b-navbar-item>
 
         <b-navbar-item
@@ -89,7 +89,7 @@
             tag="router-link"
             :to="{ path: `/member/${user.username}/home` }"
           >
-            🧘 个人中心
+            👧 个人中心
           </b-navbar-item>
           <hr class="dropdown-divider">
           <b-navbar-item
@@ -102,7 +102,7 @@
           <b-navbar-item
             tag="a"
             @click="logout"
-          > 👋 退出登录
+          > 🔓 退出登录
           </b-navbar-item>
         </b-navbar-dropdown>
       </template>
@@ -120,7 +120,7 @@ export default {
   data() {
     return {
       logoUrl: require('@/assets/logo.png'),
-      doubaoImg: require('@/assets/image/doubao.png'),
+      doubaoImg: require('@/assets/image/ccc.png'),
       searchKey: '',
       darkMode: false
     }
