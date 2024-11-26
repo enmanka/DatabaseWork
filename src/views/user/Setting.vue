@@ -8,14 +8,14 @@
         <div class="column is-full">
           <el-tabs v-model="activeName" @tab-click="handleClick">
             <el-tab-pane label="基础信息" name="first">
-              <el-form :label-position="labelPosition" label-width="100px" :model="user">
-                <el-form-item label="账号">
+              <el-form ref="ruleForm" :label-position="labelPosition" label-width="100px" :model="user">
+                <el-form-item label="账号" prop="username">
                   <el-input v-model="user.username" disabled />
                 </el-form-item>
-                <el-form-item label="昵称">
+                <el-form-item label="昵称" prop="alias">
                   <el-input v-model="user.alias" />
                 </el-form-item>
-                <el-form-item label="简介">
+                <el-form-item label="简介" prop="bio">
                   <el-input v-model="user.bio" />
                 </el-form-item>
                 <el-form-item>
