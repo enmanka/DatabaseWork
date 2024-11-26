@@ -50,7 +50,7 @@
             </el-tab-pane>
              <el-tab-pane label="密码" name="fourth">
               <el-form ref="dynamicValidateForm" :model="user" label-width="100px" class="demo-dynamic">
-                <el-form-item>
+                <el-form-item prop="password">
                   <el-input v-model="user.password" />
                 </el-form-item>
 
