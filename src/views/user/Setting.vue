@@ -30,7 +30,7 @@
               </figure>
             </el-tab-pane>
             <el-tab-pane label="电子邮箱" name="third">
-              <el-form ref="dynamicValidateForm" :model="user" label-width="100px" class="demo-dynamic">
+              <el-form ref="dynamicValidateForm1" :model="user" label-width="100px" class="demo-dynamic">
                 <el-form-item
                   prop="email"
                   label="邮箱"
@@ -43,8 +43,8 @@
                 </el-form-item>
 
                 <el-form-item>
-                  <el-button type="primary" @click="submitForm('dynamicValidateForm')">提交</el-button>
-                  <el-button @click="resetForm('dynamicValidateForm')">重置</el-button>
+                  <el-button type="primary" @click="submitForm('dynamicValidateForm1')">提交</el-button>
+                  <el-button @click="resetForm('dynamicValidateForm1')">重置</el-button>
                 </el-form-item>
               </el-form>
             </el-tab-pane>
