@@ -82,7 +82,7 @@ export default {
         alias: '',
         bio: '',
         email: '',
-        mobile: '',
+        password: '',
         avatar: ''
       }
     }
