@@ -4,7 +4,7 @@
       <div class="column is-one-quarter">
         <el-card shadow="never">
           <div slot="header" class="has-text-centered">
-            <el-avatar :size="64" :src="`https://cn.gravatar.com/avatar/${topicUser.id}?s=164&d=monsterid`" />
+            <el-avatar :size="64" :src="Img" />
             <p class="mt-3">{{ topicUser.alias || topicUser.username }}</p>
           </div>
           <div>
@@ -86,7 +86,12 @@ export default {
   name: 'Profile',
   components: { pagination },
   data() {
+    const requireContext = require.context('@/assets/image/img', false, /\.(png|jpe?g|gif)$/);
+    const imageFiles = requireContext.keys();
+    const randomIndex = Math.floor(Math.random() * imageFiles.length);
+    const randomImage = requireContext(imageFiles[randomIndex]);
     return {
+      Img:randomImage,
       topicUser: {},
       topics: {},
       page: {
