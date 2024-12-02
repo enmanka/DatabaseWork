@@ -4,7 +4,7 @@
       <div class="column is-one-quarter">
         <el-card shadow="never">
           <div slot="header" class="has-text-centered">
-            <el-avatar :size="64" :src="Img" />
+            <el-avatar :size="64" :src="user.avatar" />
             <p class="mt-3">{{ topicUser.alias || topicUser.username }}</p>
           </div>
           <div>
