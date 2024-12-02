@@ -120,7 +120,7 @@ export default {
   data() {
     return {
       logoUrl: require('@/assets/logo.png'),
-      doubaoImg: require('@/assets/image/ccc.png'),
+      Img: require('@/assets/image/ccc.png'),
       searchKey: '',
       darkMode: false
     }
