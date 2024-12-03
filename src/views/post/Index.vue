@@ -12,7 +12,7 @@
             >
               <div class="media-left">
                 <figure class="image is-48x48">
-                  <img :src="getRandomImage()" style="border-radius: 5px" />
+                  <img :src="item.avatar" style="border-radius: 5px" />
                 </figure>
               </div>
               <div class="media-content">
@@ -70,7 +70,7 @@
             >
               <div class="media-left">
                 <figure class="image is-48x48">
-                  <img :src="getRandomImage()" style="border-radius: 5px" />
+                  <img :src="item.avatar" style="border-radius: 5px" />
                 </figure>
               </div>
               <div class="media-content">
@@ -129,7 +129,7 @@
               >
                 <div class="media-left">
                   <figure class="image is-48x48">
-                    <img :src="getRandomImage()" style="border-radius: 5px" />
+                    <img :src="avatar" style="border-radius: 5px" />
                   </figure>
                 </div>
                 <div class="media-content">
@@ -174,7 +174,7 @@ import { getList } from "@/api/post";
 import { getFollowList, unFollow } from "@/api/follow";
 import Pagination from "@/components/Pagination";
 import { mapGetters } from "vuex";
-
+import { getInfoById } from "@/api/user";
 export default {
   name: "TopicList",
   components: { Pagination },
@@ -212,6 +212,13 @@ export default {
           this.page.total = data.total;
           this.page.size = data.size;
           this.articleList = data.records;
+          const articlePromises = this.articleList.map((article) => {
+            return getInfoById(article.userId).then((userResponse) => {
+            const { data: userData } = userResponse;
+            article.avatar = userData.avatar;
+            return article;
+        });
+      });
         });
       }
     },
