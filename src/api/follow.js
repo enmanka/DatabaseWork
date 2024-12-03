@@ -23,3 +23,11 @@ export function hasFollow(topicUserId) {
     method: 'get'
   }))
 }
+
+// 关注列表
+export function getFollowList() {
+  return request(({
+    url: `/relationship/validate`,
+    method: 'get'
+  }))
+}
