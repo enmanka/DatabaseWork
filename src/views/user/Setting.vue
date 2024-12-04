@@ -95,6 +95,7 @@ export default {
       getInfo(this.$route.params.username).then(res => {
         console.log(res)
         const { data } = res
+        data.password = ""
         this.user = data
       })
     },
