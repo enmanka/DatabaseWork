@@ -93,6 +93,13 @@ export default {
         this.query.total = data.total
         this.query.pageSize = data.size
         this.query.pageNum = data.current
+         const articlePromises = this.list.map((article) => {
+        return getInfoById(article.userId).then((userResponse) => {
+          const { data: userData } = userResponse;
+          article.avatar = userData.avatar;
+          return article;
+        });
+      });
       })
     }
   }
